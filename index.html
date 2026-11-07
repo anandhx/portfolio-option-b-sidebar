@@ -3,75 +3,103 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Option B · Sidebar · Anandhu Ashok</title>
-  <meta name="description" content="Preview portfolio for Anandhu Ashok. Style reference: vCard personal portfolio.">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;650;700&display=swap" rel="stylesheet">
+  <title>Option B · Dossier · Anandhu Ashok</title>
+  <meta name="description" content="Anandhu Ashok dossier. Cybersecurity and software development record.">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root { --side:#1c1b29; --gold:#e4c27a; --paper:#f7f4ee; --ink:#1c1b29; --muted:#5e5a54; }
+    :root { --side:#16151f; --gold:#e4c27a; --paper:#f6f3ec; --ink:#1b1a17; --muted:#5f5a52; }
     * { box-sizing:border-box; }
     body { margin:0; font-family:Outfit,sans-serif; background:var(--paper); color:var(--ink); }
-    .app { display:grid; grid-template-columns:300px 1fr; min-height:100vh; }
-    aside { background:var(--side); color:#f4efe4; padding:36px 26px; position:sticky; top:0; height:100vh; }
-    .mark { width:84px; height:84px; border-radius:24px; display:grid; place-items:center; background:#2a283c; color:var(--gold); font-size:28px; font-weight:700; }
-    aside h1 { font-size:28px; margin:16px 0 4px; }
-    aside p { color:#c9c3b6; margin:0 0 18px; }
-    aside a { color:#f4efe4; display:block; padding:8px 0; text-decoration:none; font-weight:600; }
-    .tag { color:var(--gold); font-size:12px; letter-spacing:.14em; font-weight:700; }
-    main { padding:36px 40px 60px; }
-    h2 { font-size:32px; margin:28px 0 12px; }
-    .card { background:#fff; border-radius:18px; padding:16px 18px; margin:10px 0; box-shadow:0 10px 30px rgba(28,27,41,.05); }
-    .card b { display:block; }
-    .when, .card span { color:var(--muted); }
-    .chips { display:flex; flex-wrap:wrap; gap:8px; }
-    .chips i { font-style:normal; background:#fff; border-radius:999px; padding:7px 10px; }
-    .pri { color:#9a3412; font-size:12px; font-weight:700; letter-spacing:.08em; }
-    .pub { color:#047857; font-size:12px; font-weight:700; letter-spacing:.08em; }
-    a.inline { color:#8a5a12; }
+    .app { display:grid; grid-template-columns:280px 1fr; min-height:100vh; }
+    aside { background:var(--side); color:#f6f1e6; padding:28px 22px; }
+    aside h1 { margin:12px 0 4px; font-size:28px; }
+    aside p { color:#c9c2b4; margin:0 0 16px; }
+    aside button, aside a { display:block; width:100%; text-align:left; background:none; border:0; color:#f6f1e6; font:inherit; font-weight:600; padding:8px 0; cursor:pointer; text-decoration:none; }
+    aside button[aria-pressed="true"] { color:var(--gold); }
+    .tag { color:var(--gold); letter-spacing:.14em; font-size:12px; font-weight:700; }
+    main { padding:28px 32px 48px; }
+    .top { display:flex; justify-content:space-between; gap:12px; align-items:end; }
+    h2 { font-size:34px; margin:0; }
+    .layout { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px; }
+    .card { background:#fff; border-radius:18px; padding:16px 18px; box-shadow:0 12px 30px rgba(22,21,31,.05); }
+    .card h3 { margin:6px 0; font-size:26px; }
+    .muted { color:var(--muted); }
+    .stack { display:flex; flex-wrap:wrap; gap:6px; }
+    .stack span { background:#f6f3ec; border-radius:999px; padding:4px 8px; font-size:13px; }
+    .index { display:grid; gap:8px; max-height:70vh; overflow:auto; }
+    .index button { text-align:left; font:inherit; border:0; background:#fff; border-radius:14px; padding:12px 14px; cursor:pointer; }
+    .index button[aria-pressed="true"] { outline:2px solid var(--gold); }
+    .index small { display:block; color:var(--muted); }
+    .path article { border-top:1px solid #e6e0d6; padding:12px 0; }
     @media (max-width:860px) {
-      .app { grid-template-columns:1fr; }
-      aside { position:relative; height:auto; }
-      main { padding:22px 16px 40px; }
+      .app, .layout { grid-template-columns:1fr; }
+      .index { max-height:none; }
+      main { padding:18px 14px 36px; }
     }
   </style>
 </head>
 <body>
   <div class="app">
     <aside>
-      <div class="tag">OPTION B · SIDEBAR</div>
-      <div class="mark">AA</div>
+      <div class="tag">OPTION B · DOSSIER</div>
       <h1>Anandhu Ashok</h1>
-      <p>Cybersecurity and software developer · Kottayam, Kerala</p>
-      <a href="#about">About</a>
-      <a href="#resume">Resume</a>
-      <a href="#work">Work</a>
-      <a href="mailto:anandhuashok6959@gmail.com">Email</a>
+      <p>Cybersecurity and software developer. Kottayam, Kerala.</p>
+      <button type="button" data-view="work" aria-pressed="true">Work record</button>
+      <button type="button" data-view="practice" aria-pressed="false">Practice</button>
+      <button type="button" data-view="path" aria-pressed="false">Experience</button>
       <a href="https://github.com/anandhx">GitHub</a>
       <a href="https://www.linkedin.com/in/anandhu-ashok/">LinkedIn</a>
+      <a href="mailto:anandhuashok6959@gmail.com">anandhuashok6959@gmail.com</a>
     </aside>
-    <main>
-      <section id="about">
-        <h2>About</h2>
-        <div class="card">Software developer at Digital University Kerala, on the Network and Systems Security Lab. The work covers security automation, firewall baselines, runtime detection, and web applications. BCA, MES Golden Jubilee College, 2021–2024.</div>
-        <div class="chips">
-          <i>Network defense</i><i>Python</i><i>PHP</i><i>Flask</i><i>Flutter</i><i>Falco</i><i>Sophos</i><i>PAN-OS</i><i>Linux</i>
-        </div>
-      </section>
-      <section id="resume">
-        <h2>Resume</h2>
-        <article class="card"><b>Software Developer, Digital University Kerala</b><span class="when">March 2025 – Present · Technopark</span><p>Project ASPER with Tata Elxsi, funded by MeitY.</p></article>
-        <article class="card"><b>Freelance Developer</b><span class="when">February 2024 – Present · Kottayam</span><p>Web systems, databases, and security-focused applications.</p></article>
-        <article class="card"><b>Python Developer, MGU Innovation Foundation</b><span class="when">June 2024 – September 2024</span><p>Python backend development.</p></article>
-        <article class="card"><b>IT Administrator, MES College Kottayam</b><span class="when">April 2024 – June 2024</span><p>College information technology administration.</p></article>
-      </section>
-      <section id="work">
-        <h2>Work</h2>
-        <article class="card"><span class="pri">PRIVATE</span><b>ASPER Dashboard</b><span>TypeScript dashboard and offline Docker release.</span></article>
-        <article class="card"><span class="pri">PRIVATE</span><b>PhishAlert</b><span>Phishing detection for web and Flutter.</span></article>
-        <article class="card"><span class="pri">PRIVATE</span><b>MediSmart, Cafe Billing, Dormetry, WaitHall</b><span>Pharmacy, point of sale, dormitory booking, and waiting-hall seats.</span></article>
-        <article class="card"><span class="pub">PUBLIC</span><b><a class="inline" href="https://github.com/anandhx/college-canteen-mini-project">College Canteen</a> · <a class="inline" href="https://github.com/anandhx/Kerala-Radio">Kerala Radio</a> · <a class="inline" href="https://github.com/anandhx/mes-kottayam">MES College</a></b><span>PHP ordering, a Flask radio player, and the college website.</span></article>
-      </section>
-      <p class="when">Option B is an original sidebar résumé. Reference: vCard personal portfolio, about 8,200 GitHub stars.</p>
-    </main>
+    <main id="main"></main>
   </div>
+  <script>
+    const projects = [
+      ["ASPER Dashboard","Private","Security","TypeScript · Docker · Auth","Dashboard, login, and an offline Docker release for Project ASPER, built inside the Network and Systems Security Lab with Tata Elxsi."],
+      ["PhishAlert","Private","Security","Web · Flutter · Detection","Link and domain review, a blacklist, and an audit log across a website and a Flutter app."],
+      ["Image Forgery Detection","Private","Security","Python · Flask","Identifies manipulated images from inconsistencies in the file."],
+      ["Tech Guard","Private","Security","Web · Telegram · Camera","Security alerts, Malayalam voice commands, and camera-based detection."],
+      ["MediSmart","Private","Product","Python · Inventory · Payments","Pharmacy operations for Kerala: prescriptions, pickup, rack stock, INR checkout."],
+      ["Cafe Billing","Private","Product","TypeScript · SQLite · Excel","Offline billing with accounts, reports, print, and Excel export."],
+      ["Dormetry","Private","Product","Flutter · Flask · Roles","Staff, supervisor, and owner share one dormitory booking app."],
+      ["WaitHall","Private","Product","Python · Booking","Counter software for air-conditioned railway waiting halls."],
+      ["Railway Parking","Private","Product","Flask · Operations","Multi-location station parking for counter staff."],
+      ["Vehicle Tracking","Private","Product","Web · Logs · Roles","Employees, vehicles, leave, and gate logs."],
+      ["Bridgex Jobs","Private","Product","Python · Telegram · SQLite","Morning job alerts and resume scoring in Telegram."],
+      ["BlindsHelper","Private","Product","Web · Voice · Access","Voice navigation, reading, and magnification for low vision."],
+      ["College Canteen","Public","Web","PHP · MySQL","Menu, stock, and campus ordering.","https://github.com/anandhx/college-canteen-mini-project"],
+      ["Kerala Radio","Public","Web","Python · Flask","A player for Kerala radio stations.","https://github.com/anandhx/Kerala-Radio"],
+      ["MES College Kottayam","Public","Web","HTML · CSS","Departments, admissions, and events.","https://github.com/anandhx/mes-kottayam"]
+    ];
+    const views = {
+      practice: `<h2>Practice</h2><div class="layout"><article class="card"><h3>Cybersecurity</h3><p class="muted">Network defense and security automation on Project ASPER. Phishing detection, image forgery checks, firewall baselines, Linux runtime detection, and incident-response training at SETS, Chennai.</p><div class="stack"><span>Falco</span><span>Sophos Firewall</span><span>PAN-OS</span><span>Ansible</span><span>Mininet</span></div></article><article class="card"><h3>Software</h3><p class="muted">End-to-end products: data model, roles, interface, and delivery. Python and PHP carry the services. Flutter covers the mobile clients.</p><div class="stack"><span>Python</span><span>Flask</span><span>PHP</span><span>MySQL</span><span>TypeScript</span><span>Flutter</span><span>Linux</span></div></article></div>`,
+      path: `<h2>Experience</h2><div class="path"><article><b>Software Developer · Digital University Kerala</b><p class="muted">March 2025 – Present, Technopark. Development team, Network and Systems Security Lab.</p></article><article><b>Freelance Developer · Kottayam</b><p class="muted">February 2024 – Present. Products for shops, stations, colleges, and security use.</p></article><article><b>Python Developer · MGU Innovation Foundation</b><p class="muted">June 2024 – September 2024. Backend Python.</p></article><article><b>IT Administrator · MES Golden Jubilee College</b><p class="muted">April 2024 – June 2024. BCA, 2021–2024.</p></article></div>`
+    };
+    let view = "work";
+    let current = 0;
+    const main = document.getElementById("main");
+    function workView() {
+      const p = projects[current];
+      const link = p[5] ? `<p><a href="${p[5]}">Repository</a></p>` : `<p class="muted">Private build. No public source link.</p>`;
+      return `<div class="top"><h2>Work record</h2><span class="muted">${projects.length} systems</span></div><div class="layout"><div class="index">${projects.map((item,i)=>`<button type="button" data-i="${i}" aria-pressed="${i===current}"><b>${item[0]}</b><small>${item[1]} · ${item[2]}</small></button>`).join("")}</div><article class="card"><div class="tag">${p[1]} · ${p[2]}</div><h3>${p[0]}</h3><p>${p[4]}</p><div class="stack">${p[3].split(" · ").map(s=>`<span>${s}</span>`).join("")}</div>${link}</article></div>`;
+    }
+    function draw() {
+      main.innerHTML = view === "work" ? workView() : views[view];
+      document.querySelectorAll("aside button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.view === view)));
+    }
+    document.querySelector("aside").addEventListener("click", e => {
+      const b = e.target.closest("button");
+      if (!b) return;
+      view = b.dataset.view;
+      draw();
+    });
+    main.addEventListener("click", e => {
+      const b = e.target.closest("[data-i]");
+      if (!b) return;
+      current = Number(b.dataset.i);
+      draw();
+    });
+    draw();
+  </script>
 </body>
 </html>
