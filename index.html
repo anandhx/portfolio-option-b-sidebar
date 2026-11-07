@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Option B · Sidebar · Anandhu Ashok</title>
+  <meta name="description" content="Preview portfolio for Anandhu Ashok. Style reference: vCard personal portfolio.">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;650;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --side:#1c1b29; --gold:#e4c27a; --paper:#f7f4ee; --ink:#1c1b29; --muted:#5e5a54; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Outfit,sans-serif; background:var(--paper); color:var(--ink); }
+    .app { display:grid; grid-template-columns:300px 1fr; min-height:100vh; }
+    aside { background:var(--side); color:#f4efe4; padding:36px 26px; position:sticky; top:0; height:100vh; }
+    .mark { width:84px; height:84px; border-radius:24px; display:grid; place-items:center; background:#2a283c; color:var(--gold); font-size:28px; font-weight:700; }
+    aside h1 { font-size:28px; margin:16px 0 4px; }
+    aside p { color:#c9c3b6; margin:0 0 18px; }
+    aside a { color:#f4efe4; display:block; padding:8px 0; text-decoration:none; font-weight:600; }
+    .tag { color:var(--gold); font-size:12px; letter-spacing:.14em; font-weight:700; }
+    main { padding:36px 40px 60px; }
+    h2 { font-size:32px; margin:28px 0 12px; }
+    .card { background:#fff; border-radius:18px; padding:16px 18px; margin:10px 0; box-shadow:0 10px 30px rgba(28,27,41,.05); }
+    .card b { display:block; }
+    .when, .card span { color:var(--muted); }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; }
+    .chips i { font-style:normal; background:#fff; border-radius:999px; padding:7px 10px; }
+    .pri { color:#9a3412; font-size:12px; font-weight:700; letter-spacing:.08em; }
+    .pub { color:#047857; font-size:12px; font-weight:700; letter-spacing:.08em; }
+    a.inline { color:#8a5a12; }
+    @media (max-width:860px) {
+      .app { grid-template-columns:1fr; }
+      aside { position:relative; height:auto; }
+      main { padding:22px 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside>
+      <div class="tag">OPTION B · SIDEBAR</div>
+      <div class="mark">AA</div>
+      <h1>Anandhu Ashok</h1>
+      <p>Cybersecurity and software developer · Kottayam, Kerala</p>
+      <a href="#about">About</a>
+      <a href="#resume">Resume</a>
+      <a href="#work">Work</a>
+      <a href="mailto:anandhuashok6959@gmail.com">Email</a>
+      <a href="https://github.com/anandhx">GitHub</a>
+      <a href="https://www.linkedin.com/in/anandhu-ashok/">LinkedIn</a>
+    </aside>
+    <main>
+      <section id="about">
+        <h2>About</h2>
+        <div class="card">Software developer at Digital University Kerala, on the Network and Systems Security Lab. The work covers security automation, firewall baselines, runtime detection, and web applications. BCA, MES Golden Jubilee College, 2021–2024.</div>
+        <div class="chips">
+          <i>Network defense</i><i>Python</i><i>PHP</i><i>Flask</i><i>Flutter</i><i>Falco</i><i>Sophos</i><i>PAN-OS</i><i>Linux</i>
+        </div>
+      </section>
+      <section id="resume">
+        <h2>Resume</h2>
+        <article class="card"><b>Software Developer, Digital University Kerala</b><span class="when">March 2025 – Present · Technopark</span><p>Project ASPER with Tata Elxsi, funded by MeitY.</p></article>
+        <article class="card"><b>Freelance Developer</b><span class="when">February 2024 – Present · Kottayam</span><p>Web systems, databases, and security-focused applications.</p></article>
+        <article class="card"><b>Python Developer, MGU Innovation Foundation</b><span class="when">June 2024 – September 2024</span><p>Python backend development.</p></article>
+        <article class="card"><b>IT Administrator, MES College Kottayam</b><span class="when">April 2024 – June 2024</span><p>College information technology administration.</p></article>
+      </section>
+      <section id="work">
+        <h2>Work</h2>
+        <article class="card"><span class="pri">PRIVATE</span><b>ASPER Dashboard</b><span>TypeScript dashboard and offline Docker release.</span></article>
+        <article class="card"><span class="pri">PRIVATE</span><b>PhishAlert</b><span>Phishing detection for web and Flutter.</span></article>
+        <article class="card"><span class="pri">PRIVATE</span><b>MediSmart, Cafe Billing, Dormetry, WaitHall</b><span>Pharmacy, point of sale, dormitory booking, and waiting-hall seats.</span></article>
+        <article class="card"><span class="pub">PUBLIC</span><b><a class="inline" href="https://github.com/anandhx/college-canteen-mini-project">College Canteen</a> · <a class="inline" href="https://github.com/anandhx/Kerala-Radio">Kerala Radio</a> · <a class="inline" href="https://github.com/anandhx/mes-kottayam">MES College</a></b><span>PHP ordering, a Flask radio player, and the college website.</span></article>
+      </section>
+      <p class="when">Option B is an original sidebar résumé. Reference: vCard personal portfolio, about 8,200 GitHub stars.</p>
+    </main>
+  </div>
+</body>
+</html>
