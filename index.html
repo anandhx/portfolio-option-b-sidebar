@@ -4,37 +4,48 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Option B · Dossier · Anandhu Ashok</title>
-  <meta name="description" content="Anandhu Ashok dossier. Cybersecurity and software development record.">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Anandhu Ashok dossier. Case files for cybersecurity and software systems.">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,450;6..72,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root { --side:#16151f; --gold:#e4c27a; --paper:#f6f3ec; --ink:#1b1a17; --muted:#5f5a52; }
+    :root { --side:#14120f; --gold:#d7b56a; --paper:#f3efe6; --ink:#1b1914; --muted:#655f55; --line:#e4dccf; }
     * { box-sizing:border-box; }
-    body { margin:0; font-family:Outfit,sans-serif; background:var(--paper); color:var(--ink); }
-    .app { display:grid; grid-template-columns:280px 1fr; min-height:100vh; }
-    aside { background:var(--side); color:#f6f1e6; padding:28px 22px; }
-    aside h1 { margin:12px 0 4px; font-size:28px; }
-    aside p { color:#c9c2b4; margin:0 0 16px; }
-    aside button, aside a { display:block; width:100%; text-align:left; background:none; border:0; color:#f6f1e6; font:inherit; font-weight:600; padding:8px 0; cursor:pointer; text-decoration:none; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:Outfit,sans-serif; }
+    button { font:inherit; color:inherit; }
+    a { color:#8a5a12; }
+    .app { display:grid; grid-template-columns:270px 1fr; min-height:100vh; }
+    aside { background:var(--side); color:#f6f1e6; padding:26px 20px; }
+    aside h1 { font-family:Newsreader,serif; font-weight:450; font-size:34px; margin:8px 0 4px; }
+    aside p { color:#cfc6b6; margin:0 0 16px; }
+    .tag { color:var(--gold); letter-spacing:.16em; font-size:12px; font-weight:700; }
+    aside nav { display:grid; gap:4px; margin-bottom:18px; }
+    aside button, aside a { display:block; width:100%; text-align:left; background:none; border:0; color:#f6f1e6; text-decoration:none; font-weight:600; padding:8px 0; cursor:pointer; }
     aside button[aria-pressed="true"] { color:var(--gold); }
-    .tag { color:var(--gold); letter-spacing:.14em; font-size:12px; font-weight:700; }
-    main { padding:28px 32px 48px; }
-    .top { display:flex; justify-content:space-between; gap:12px; align-items:end; }
-    h2 { font-size:34px; margin:0; }
-    .layout { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px; }
-    .card { background:#fff; border-radius:18px; padding:16px 18px; box-shadow:0 12px 30px rgba(22,21,31,.05); }
-    .card h3 { margin:6px 0; font-size:26px; }
-    .muted { color:var(--muted); }
+    main { padding:26px 28px 48px; }
+    .layout { display:grid; grid-template-columns:300px 1fr; gap:16px; align-items:start; }
+    .files { display:grid; gap:6px; max-height:calc(100dvh - 80px); overflow:auto; }
+    .files button { text-align:left; border:0; background:#fff; border-radius:12px; padding:10px 12px; cursor:pointer; }
+    .files small { display:block; color:var(--muted); }
+    .files button[aria-pressed="true"] { outline:2px solid var(--gold); }
+    .file { background:#fffdf8; border:1px solid var(--line); border-radius:18px; padding:22px 22px 28px; box-shadow:0 18px 40px rgba(20,18,15,.05); }
+    .filehead { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; }
+    .no { letter-spacing:.14em; font-size:12px; color:var(--muted); font-weight:700; }
+    h2, h3 { font-family:Newsreader,serif; font-weight:450; }
+    .file h2 { font-size:clamp(32px, 4vw, 46px); margin:4px 0 8px; line-height:1; }
+    .stamp { border:2px solid #8d2f2f; color:#8d2f2f; letter-spacing:.14em; font-weight:700; font-size:12px; padding:8px 10px; transform:rotate(-8deg); }
+    .stamp.pub { border-color:#1d6a42; color:#1d6a42; }
+    .file section { border-top:1px solid var(--line); padding-top:12px; margin-top:12px; }
+    .file ol { margin:8px 0 0; padding-left:18px; }
     .stack { display:flex; flex-wrap:wrap; gap:6px; }
-    .stack span { background:#f6f3ec; border-radius:999px; padding:4px 8px; font-size:13px; }
-    .index { display:grid; gap:8px; max-height:70vh; overflow:auto; }
-    .index button { text-align:left; font:inherit; border:0; background:#fff; border-radius:14px; padding:12px 14px; cursor:pointer; }
-    .index button[aria-pressed="true"] { outline:2px solid var(--gold); }
-    .index small { display:block; color:var(--muted); }
-    .path article { border-top:1px solid #e6e0d6; padding:12px 0; }
+    .stack span, .tools span { background:var(--paper); border-radius:999px; padding:4px 8px; font-size:13px; }
+    .muted { color:var(--muted); }
+    table { width:100%; border-collapse:collapse; background:#fff; }
+    th, td { text-align:left; padding:8px 6px; border-top:1px solid var(--line); vertical-align:top; }
+    .record article { border-top:1px solid var(--line); padding:12px 0; }
     @media (max-width:860px) {
       .app, .layout { grid-template-columns:1fr; }
-      .index { max-height:none; }
-      main { padding:18px 14px 36px; }
+      aside nav { display:flex; flex-wrap:wrap; gap:10px; }
+      .files { max-height:none; }
+      main { padding:16px 14px 36px; }
     }
   </style>
 </head>
@@ -43,49 +54,52 @@
     <aside>
       <div class="tag">OPTION B · DOSSIER</div>
       <h1>Anandhu Ashok</h1>
-      <p>Cybersecurity and software developer. Kottayam, Kerala.</p>
-      <button type="button" data-view="work" aria-pressed="true">Work record</button>
-      <button type="button" data-view="practice" aria-pressed="false">Practice</button>
-      <button type="button" data-view="path" aria-pressed="false">Experience</button>
+      <p>Cybersecurity and software developer. Kottayam, Kerala. 35 systems on file.</p>
+      <nav>
+        <button type="button" data-view="files" aria-pressed="true">Case files</button>
+        <button type="button" data-view="practice" aria-pressed="false">Practice map</button>
+        <button type="button" data-view="record" aria-pressed="false">Record</button>
+      </nav>
       <a href="https://github.com/anandhx">GitHub</a>
       <a href="https://www.linkedin.com/in/anandhu-ashok/">LinkedIn</a>
       <a href="mailto:anandhuashok6959@gmail.com">anandhuashok6959@gmail.com</a>
     </aside>
     <main id="main"></main>
   </div>
+  <script type="application/json" id="data">[{"id": "asper", "name": "ASPER Dashboard", "vis": "Private", "area": "Security", "stack": ["TypeScript", "Docker", "Authentication"], "brief": "Dashboard, authentication, and an offline Docker release for Project ASPER.", "parts": ["Login service", "Operator dashboard", "Offline Docker release"], "place": "Network and Systems Security Lab", "href": ""}, {"id": "phish", "name": "PhishAlert", "vis": "Private", "area": "Security", "stack": ["Web", "Flutter", "Detection"], "brief": "Link and domain review, with a blacklist and an audit log, on the web and in Flutter.", "parts": ["Website client", "Flutter client", "Blacklist and audit log"], "place": "Private security product", "href": ""}, {"id": "forge", "name": "Image Forgery Detection", "vis": "Private", "area": "Security", "stack": ["Python", "Flask"], "brief": "Flags manipulated images from inconsistencies in the image data.", "parts": ["Flask service", "Image checks", "Result view"], "place": "Private security tool", "href": ""}, {"id": "guard", "name": "Tech Guard", "vis": "Private", "area": "Security", "stack": ["Web", "Telegram", "Voice"], "brief": "Security assistant with alerts, Malayalam voice commands, and camera-based detection.", "parts": ["Alert feed", "Telegram assistant", "Camera detection"], "place": "Private security assistant", "href": ""}, {"id": "medi", "name": "MediSmart", "vis": "Private", "area": "Operations", "stack": ["Python", "Inventory", "Checkout"], "brief": "Kerala pharmacy system: prescription reading, store pickup, rack stock, and INR checkout.", "parts": ["Prescription reader", "Rack stock", "INR checkout"], "place": "Kerala pharmacy", "href": ""}, {"id": "cafe", "name": "Cafe Billing", "vis": "Private", "area": "Operations", "stack": ["TypeScript", "SQLite", "Excel"], "brief": "Offline point of sale with accounts, reports, print, and Excel.", "parts": ["Billing desk", "Accounts and reports", "Print and Excel"], "place": "Offline counter", "href": ""}, {"id": "dorm", "name": "Dormetry", "vis": "Private", "area": "Operations", "stack": ["Flutter", "Flask"], "brief": "One application for dormitory staff, the supervisor, and the owner.", "parts": ["Staff view", "Supervisor view", "Owner view"], "place": "Railway dormitory", "href": ""}, {"id": "wait", "name": "WaitHall", "vis": "Private", "area": "Operations", "stack": ["Python", "Booking"], "brief": "Seat booking for air-conditioned railway waiting halls.", "parts": ["Seat map", "Counter flow", "Booking record"], "place": "Railway waiting hall", "href": ""}, {"id": "park", "name": "Railway Parking", "vis": "Private", "area": "Operations", "stack": ["Flask", "HTML"], "brief": "Multi-location station parking for counter staff.", "parts": ["Locations", "Counter entry", "Parking record"], "place": "Railway stations", "href": ""}, {"id": "track", "name": "Vehicle Tracking", "vis": "Private", "area": "Operations", "stack": ["Web", "Roles"], "brief": "Vehicles, employees, leave, and entry logs for a company site.", "parts": ["Vehicle register", "Leave", "Gate log"], "place": "Company site", "href": ""}, {"id": "vms", "name": "Vehicle Management", "vis": "Private", "area": "Operations", "stack": ["Web", "Roles"], "brief": "Vehicle management with separate admin, mechanic, and user roles.", "parts": ["Admin", "Mechanic", "User"], "place": "Workshop roles", "href": ""}, {"id": "jobs", "name": "Bridgex Jobs", "vis": "Private", "area": "Operations", "stack": ["Python", "Telegram", "SQLite"], "brief": "Job alerts and resume scoring delivered in Telegram.", "parts": ["Job alerts", "Resume scoring", "SQLite store"], "place": "Telegram", "href": ""}, {"id": "blind", "name": "BlindsHelper", "vis": "Private", "area": "Operations", "stack": ["Web", "Voice"], "brief": "Voice navigation, screen reading, and magnification for low-vision users.", "parts": ["Voice navigation", "Screen reading", "Magnification"], "place": "Access tool", "href": ""}, {"id": "garage", "name": "Auto Service Dashboard", "vis": "Private", "area": "Operations", "stack": ["Web", "Inventory"], "brief": "Spare parts, accessories, and garage booking. Final-year project.", "parts": ["Spare parts", "Accessories", "Garage booking"], "place": "Final-year project", "href": ""}, {"id": "train", "name": "Train Tracker", "vis": "Private", "area": "Operations", "stack": ["Web"], "brief": "Live rail monitoring. A college project.", "parts": ["Live train view", "Rail monitoring"], "place": "College project", "href": ""}, {"id": "xplore", "name": "Xplore", "vis": "Private", "area": "Operations", "stack": ["Flask"], "brief": "Travel planning and a business directory.", "parts": ["Travel planning", "Business directory"], "place": "Flask application", "href": ""}, {"id": "ev", "name": "EV Service Station", "vis": "Private", "area": "Operations", "stack": ["Web"], "brief": "On-demand charging and mechanical support.", "parts": ["Charging request", "Mechanical support"], "place": "Mobile service", "href": ""}, {"id": "craft", "name": "Craft Marketplace", "vis": "Private", "area": "Operations", "stack": ["PHP", "MySQL"], "brief": "Marketplace for handmade goods.", "parts": ["Listings", "MySQL catalogue"], "place": "PHP and MySQL", "href": ""}, {"id": "eden", "name": "Eden Garden", "vis": "Private", "area": "Operations", "stack": ["Web"], "brief": "Website for an event-planning studio.", "parts": ["Studio site", "Event enquiry"], "place": "Event planners", "href": ""}, {"id": "events", "name": "Event Management", "vis": "Private", "area": "Operations", "stack": ["Web"], "brief": "Event management system.", "parts": ["Event records", "Event desk"], "place": "Private system", "href": ""}, {"id": "canteen", "name": "College Canteen", "vis": "Public", "area": "Public", "stack": ["PHP", "MySQL"], "brief": "Campus canteen with a menu, inventory, and ordering.", "parts": ["Menu", "Inventory", "Orders"], "place": "College campus", "href": "https://github.com/anandhx/college-canteen-mini-project"}, {"id": "radio", "name": "Kerala Radio", "vis": "Public", "area": "Public", "stack": ["Flask", "Python"], "brief": "Web player for Kerala radio stations.", "parts": ["Station list", "Player", "Flask app"], "place": "Public web", "href": "https://github.com/anandhx/Kerala-Radio"}, {"id": "mes", "name": "MES College Kottayam", "vis": "Public", "area": "Public", "stack": ["HTML", "CSS"], "brief": "College site for departments, admissions, and events.", "parts": ["Departments", "Admissions", "Events"], "place": "MES Golden Jubilee College", "href": "https://github.com/anandhx/mes-kottayam"}, {"id": "nurse", "name": "Nursing Locker", "vis": "Public", "area": "Public", "stack": ["HTML"], "brief": "BSc Nursing question papers and study notes.", "parts": ["Question papers", "Study notes"], "place": "Public archive", "href": "https://github.com/anandhx/Nursing-Locker"}, {"id": "bus", "name": "Bus World Erumeli", "vis": "Public", "area": "Public", "stack": ["HTML", "CSS"], "brief": "Site for a vehicle accessories shop.", "parts": ["Shop pages", "Accessories"], "place": "Erumeli", "href": "https://github.com/anandhx/bus-world-erumely"}, {"id": "herb", "name": "MA Herbals", "vis": "Public", "area": "Public", "stack": ["HTML", "CSS"], "brief": "Site for a herbal hair-care brand.", "parts": ["Brand story", "Hair-care range"], "place": "Public web", "href": "https://github.com/anandhx/ma_herbals"}, {"id": "paint", "name": "Perfect Painting", "vis": "Public", "area": "Public", "stack": ["HTML"], "brief": "Bill generator for a painting business.", "parts": ["Bill form", "Generated bill"], "place": "Public web", "href": "https://github.com/anandhx/Perfect-Painting"}, {"id": "sand", "name": "Plakkattu", "vis": "Public", "area": "Public", "stack": ["HTML", "CSS"], "brief": "Site for an M-sand and building-materials yard in Kottayam.", "parts": ["Materials", "Yard details"], "place": "Kottayam", "href": "https://github.com/anandhx/Plakkattu"}, {"id": "bake", "name": "The Baking Hub", "vis": "Public", "area": "Public", "stack": ["HTML", "CSS"], "brief": "Mobile site for a bakery.", "parts": ["Mobile layout", "Bakery pages"], "place": "Public web", "href": "https://github.com/anandhx/thebakinghub"}, {"id": "jinsho", "name": "Jinsho", "vis": "Public", "area": "Public", "stack": ["HTML", "CSS"], "brief": "Portfolio site for an interior studio.", "parts": ["Studio work", "Interior pages"], "place": "Public web", "href": "https://github.com/anandhx/portfolio-jinsho"}, {"id": "menu", "name": "Smart Menu", "vis": "Public", "area": "Public", "stack": ["HTML"], "brief": "A menu site.", "parts": ["Menu page"], "place": "Public web", "href": "https://github.com/anandhx/fd"}, {"id": "tvm", "name": "Discover Trivandrum", "vis": "Public", "area": "Public", "stack": ["HTML", "CSS"], "brief": "A guide to Thiruvananthapuram.", "parts": ["City guide", "Place pages"], "place": "Public web", "href": "https://github.com/anandhx/tvm"}, {"id": "serena", "name": "Serena", "vis": "Public", "area": "Public", "stack": ["Python"], "brief": "Python virtual assistant for everyday tasks.", "parts": ["Assistant", "Everyday tasks"], "place": "Python", "href": "https://github.com/anandhx/Serena"}, {"id": "tasks", "name": "Task Management", "vis": "Public", "area": "Public", "stack": ["Python"], "brief": "A task management system.", "parts": ["Task list", "Python app"], "place": "Python", "href": "https://github.com/anandhx/Task-Management-System"}, {"id": "remind", "name": "Reminder Bot", "vis": "Public", "area": "Public", "stack": ["Python"], "brief": "Python bot for event reminders.", "parts": ["Event reminders", "Python bot"], "place": "Python", "href": "https://github.com/anandhx/Reminder-Bot"}]</script>
   <script>
-    const projects = [
-      ["ASPER Dashboard","Private","Security","TypeScript · Docker · Auth","Dashboard, login, and an offline Docker release for Project ASPER, built inside the Network and Systems Security Lab with Tata Elxsi."],
-      ["PhishAlert","Private","Security","Web · Flutter · Detection","Link and domain review, a blacklist, and an audit log across a website and a Flutter app."],
-      ["Image Forgery Detection","Private","Security","Python · Flask","Identifies manipulated images from inconsistencies in the file."],
-      ["Tech Guard","Private","Security","Web · Telegram · Camera","Security alerts, Malayalam voice commands, and camera-based detection."],
-      ["MediSmart","Private","Product","Python · Inventory · Payments","Pharmacy operations for Kerala: prescriptions, pickup, rack stock, INR checkout."],
-      ["Cafe Billing","Private","Product","TypeScript · SQLite · Excel","Offline billing with accounts, reports, print, and Excel export."],
-      ["Dormetry","Private","Product","Flutter · Flask · Roles","Staff, supervisor, and owner share one dormitory booking app."],
-      ["WaitHall","Private","Product","Python · Booking","Counter software for air-conditioned railway waiting halls."],
-      ["Railway Parking","Private","Product","Flask · Operations","Multi-location station parking for counter staff."],
-      ["Vehicle Tracking","Private","Product","Web · Logs · Roles","Employees, vehicles, leave, and gate logs."],
-      ["Bridgex Jobs","Private","Product","Python · Telegram · SQLite","Morning job alerts and resume scoring in Telegram."],
-      ["BlindsHelper","Private","Product","Web · Voice · Access","Voice navigation, reading, and magnification for low vision."],
-      ["College Canteen","Public","Web","PHP · MySQL","Menu, stock, and campus ordering.","https://github.com/anandhx/college-canteen-mini-project"],
-      ["Kerala Radio","Public","Web","Python · Flask","A player for Kerala radio stations.","https://github.com/anandhx/Kerala-Radio"],
-      ["MES College Kottayam","Public","Web","HTML · CSS","Departments, admissions, and events.","https://github.com/anandhx/mes-kottayam"]
-    ];
-    const views = {
-      practice: `<h2>Practice</h2><div class="layout"><article class="card"><h3>Cybersecurity</h3><p class="muted">Network defense and security automation on Project ASPER. Phishing detection, image forgery checks, firewall baselines, Linux runtime detection, and incident-response training at SETS, Chennai.</p><div class="stack"><span>Falco</span><span>Sophos Firewall</span><span>PAN-OS</span><span>Ansible</span><span>Mininet</span></div></article><article class="card"><h3>Software</h3><p class="muted">End-to-end products: data model, roles, interface, and delivery. Python and PHP carry the services. Flutter covers the mobile clients.</p><div class="stack"><span>Python</span><span>Flask</span><span>PHP</span><span>MySQL</span><span>TypeScript</span><span>Flutter</span><span>Linux</span></div></article></div>`,
-      path: `<h2>Experience</h2><div class="path"><article><b>Software Developer · Digital University Kerala</b><p class="muted">March 2025 – Present, Technopark. Development team, Network and Systems Security Lab.</p></article><article><b>Freelance Developer · Kottayam</b><p class="muted">February 2024 – Present. Products for shops, stations, colleges, and security use.</p></article><article><b>Python Developer · MGU Innovation Foundation</b><p class="muted">June 2024 – September 2024. Backend Python.</p></article><article><b>IT Administrator · MES Golden Jubilee College</b><p class="muted">April 2024 – June 2024. BCA, 2021–2024.</p></article></div>`
-    };
-    let view = "work";
-    let current = 0;
+    const WORK = JSON.parse(document.getElementById("data").textContent);
     const main = document.getElementById("main");
-    function workView() {
-      const p = projects[current];
-      const link = p[5] ? `<p><a href="${p[5]}">Repository</a></p>` : `<p class="muted">Private build. No public source link.</p>`;
-      return `<div class="top"><h2>Work record</h2><span class="muted">${projects.length} systems</span></div><div class="layout"><div class="index">${projects.map((item,i)=>`<button type="button" data-i="${i}" aria-pressed="${i===current}"><b>${item[0]}</b><small>${item[1]} · ${item[2]}</small></button>`).join("")}</div><article class="card"><div class="tag">${p[1]} · ${p[2]}</div><h3>${p[0]}</h3><p>${p[4]}</p><div class="stack">${p[3].split(" · ").map(s=>`<span>${s}</span>`).join("")}</div>${link}</article></div>`;
+    let current = "asper";
+    let view = "files";
+    const fromHash = location.hash.slice(1);
+    if (fromHash === "practice" || fromHash === "record") view = fromHash;
+    else if (WORK.some(p => p.id === fromHash)) current = fromHash;
+    function esc(s) { return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+    function fileHtml(p) {
+      const n = String(WORK.findIndex(x => x.id === p.id) + 1).padStart(2, "0");
+      const access = p.href ? `<a href="${esc(p.href)}">Repository</a>` : `Private repository.`;
+      return `<article class="file"><div class="filehead"><div><div class="no">FILE ${n} · ${esc(p.area.toUpperCase())}</div><h2>${esc(p.name)}</h2><p>${esc(p.brief)}</p><p class="muted">${esc(p.place)}</p></div><div class="stamp ${p.vis==="Public"?"pub":""}">${esc(p.vis.toUpperCase())}</div></div><section><h3>Assembled</h3><ol>${p.parts.map(part => `<li>${esc(part)}</li>`).join("")}</ol></section><section><h3>Stack</h3><div class="stack">${p.stack.map(s => `<span>${esc(s)}</span>`).join("")}</div></section><section><h3>Access</h3><p>${access}</p></section></article>`;
+    }
+    function filesView() {
+      return `<div class="layout"><div class="files">${WORK.map(p => `<button type="button" data-id="${p.id}" aria-pressed="${p.id===current}"><b>${esc(p.name)}</b><small>File ${String(WORK.findIndex(x=>x.id===p.id)+1).padStart(2,"0")} · ${esc(p.vis)}</small></button>`).join("")}</div>${fileHtml(WORK.find(p => p.id === current))}</div>`;
+    }
+    function practiceView() {
+      const tools = ["Python","Flask","PHP","MySQL","TypeScript","Flutter","Docker","Telegram","SQLite","HTML","CSS","Web"];
+      const rows = tools.map(tool => {
+        const hits = WORK.filter(p => p.stack.some(s => s.toLowerCase() === tool.toLowerCase()));
+        return hits.length ? `<tr><th>${tool}</th><td>${hits.map(p => esc(p.name)).join(", ")}</td><td>${hits.length}</td></tr>` : "";
+      }).join("");
+      return `<h2>Practice map</h2><p class="muted">Each tool is listed with the systems that use it. Counts come from this record.</p><table><thead><tr><th>Tool</th><th>Systems</th><th></th></tr></thead><tbody>${rows}</tbody></table><h3>Security workbench</h3><p>Project ASPER with Tata Elxsi. Phishing detection, image checks, firewall baselines, Falco runtime detection, PAN-OS, Mininet, and Ansible. Incident-response workshop at SETS, Chennai.</p>`;
+    }
+    function recordView() {
+      return `<h2>Record</h2><div class="record"><article><b>Software Developer · Digital University Kerala</b><p class="muted">March 2025 – Present, Technopark. Development team, Network and Systems Security Lab.</p></article><article><b>Freelance Developer · Kottayam</b><p class="muted">February 2024 – Present. Products for shops, stations, colleges, and security use.</p></article><article><b>Python Developer · MGU Innovation Foundation</b><p class="muted">June 2024 – September 2024. Backend Python.</p></article><article><b>IT Administrator · MES Golden Jubilee College</b><p class="muted">April 2024 – June 2024.</p></article><article><b>Education</b><p class="muted">BCA, MES Golden Jubilee College, Mahatma Gandhi University, 2021–2024. Higher secondary Computer Science, MGM NSS HSS Lakkattoor, 2019–2021. Kaggle, Introduction to Programming Using Python, April 2024.</p></article></div>`;
     }
     function draw() {
-      main.innerHTML = view === "work" ? workView() : views[view];
+      main.innerHTML = view === "practice" ? practiceView() : view === "record" ? recordView() : filesView();
       document.querySelectorAll("aside button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.view === view)));
+      const hash = view === "files" ? current : view;
+      if (location.hash !== "#" + hash) history.replaceState(null, "", "#" + hash);
     }
     document.querySelector("aside").addEventListener("click", e => {
       const b = e.target.closest("button");
@@ -94,9 +108,10 @@
       draw();
     });
     main.addEventListener("click", e => {
-      const b = e.target.closest("[data-i]");
+      const b = e.target.closest("[data-id]");
       if (!b) return;
-      current = Number(b.dataset.i);
+      current = b.dataset.id;
+      view = "files";
       draw();
     });
     draw();
